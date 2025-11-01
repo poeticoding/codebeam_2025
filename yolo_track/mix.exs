@@ -30,7 +30,7 @@ defmodule YoloTrack.MixProject do
       {:nx, "~> 0.10"},
       {:exla, "~> 0.10"},
       {:evision, "~> 0.2.14"},
-      {:yolo, path: "../yolo_elixir"}
+      {:yolo, github: "poeticoding/yolo_elixir"}
     ]
   end
 end

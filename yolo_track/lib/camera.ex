@@ -38,7 +38,7 @@ defmodule YoloTrack.Camera do
         objs = get_objects(frame, state.model)
         {tracker, _events} = SimpleTracker.update(state.tracker, objs, now_ms())
         broadcast(frame, tracker.tracks)
-        %{state | frame: frame}
+        %{state | frame: frame, tracker: tracker}
 
       _ ->
         state
