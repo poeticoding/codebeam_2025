@@ -1,5 +1,9 @@
 # The directory Mix will write compiled artifacts to.
 /yolo_track/_build
+/yolo_detect/_build
+/yolo_track/deps
+/yolo_detect/deps
+
 
 # If you run "mix test --cover", coverage assets end up here.
 /cover/

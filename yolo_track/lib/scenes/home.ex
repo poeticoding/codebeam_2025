@@ -74,7 +74,7 @@ defmodule YoloTrack.Scene.Home do
           {x, y, w, h} = rescale_bbox(bbox, scene.viewport.size, Evision.Mat.shape(orig_mat))
 
           g
-          |> rect({w, h}, stroke: {2, :lime}, translate: {x, y})
+          |> rect({w, h}, stroke: {2, track_color(track_id)}, translate: {x, y})
           |> text(to_string(track_id), font_size: 15, translate: {x + 4, y - 6})
         end)
       end, id: :bbox)
@@ -102,4 +102,9 @@ defmodule YoloTrack.Scene.Home do
     {x, y, w, h}
   end
 
+  @colors [:red, :lime, :purple, :blue]
+  defp track_color(track_id) do
+    color_id = rem(track_id, 4)
+    Enum.at(@colors, color_id)
+  end
 end

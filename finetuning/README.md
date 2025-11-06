@@ -1,0 +1,1 @@
+Hands Dataset: https://universe.roboflow.com/rozpoznawanie-wzorcw/hands-bkmaj

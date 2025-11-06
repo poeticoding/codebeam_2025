@@ -22,7 +22,7 @@ defmodule YoloTrack.Trackers.SimpleTracker do
 
 
   @iou_tresh 0.60
-  @max_age 20
+  @max_age 30*7
   @min_hits 3
 
   @spec new() :: tracker_state()
@@ -103,7 +103,7 @@ defmodule YoloTrack.Trackers.SimpleTracker do
           last_seen: now_ms,
           born_at: now_ms
         }
-        dbg(new_track)
+
         {Map.put(tracks, next_id, new_track), next_id + 1}
       end)
 

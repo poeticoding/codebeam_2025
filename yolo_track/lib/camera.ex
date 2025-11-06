@@ -11,7 +11,7 @@ defmodule YoloTrack.Camera do
   def init(device_id) do
     cap = Evision.VideoCapture.videoCapture(device_id)
     true = Evision.VideoCapture.isOpened(cap)
-    model = YOLO.load(model_path: "yolo11n.onnx", classes_path: "coco_classes.json", eps: [:coreml] )
+    model = YOLO.load(model_path: "yolo11m.onnx", classes_path: "coco_classes.json", eps: [:coreml] )
     fps = if is_number(cap.fps) and cap.fps > 0, do: cap.fps, else: 30.0
     interval_ms = max(1, trunc(1000 / fps))
 
